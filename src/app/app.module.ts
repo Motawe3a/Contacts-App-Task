@@ -13,6 +13,7 @@ import { ContactDetailsComponent } from './Contacts/contact-details/contact-deta
 import { AddContactComponent } from './Contacts/add-contact/add-contact.component';
 import { EditContactComponent } from './Contacts/edit-contact/edit-contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SearchDataPipe } from './shared/search-data.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ContactDetailsComponent,
     AddContactComponent,
     EditContactComponent,
-    NavbarComponent
+    NavbarComponent,
+    SearchDataPipe
   ],
   imports: [
     BrowserModule,
