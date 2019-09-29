@@ -1,12 +1,15 @@
-Search :  <input type="text" id="input" size="30 [(ngModel)]='listFilterBy' ">
-<button type="button" (click)="addContact()" >Add New</button>
-
+Search :  <input type="text" id="input" size="30 [(ngModel)]='listFilterBy' ">&nbsp;
+<button class="btn btn-warning" type="button" (click)="addContact()" >Add New</button>
 <br><br>
 
-<div class="card">
+<div class="card" >
   <h5 class="card-header">Contact Managemnet</h5>
-  <div class="card-body" *ngFor="let contact of FilteredList">
-    <app-contact-details [contact]='contact' (refreshContactList)="refreshList()">
-    </app-contact-details>
+  <div class="card-body" >
+    <div class="container">
+      <div class="row" >
+            <app-contact-details *ngFor="let contact of FilteredList" [contact]='contact' (refreshContactList)="refreshList()">
+            </app-contact-details>
+        </div>
+    </div>
   </div>
 </div>

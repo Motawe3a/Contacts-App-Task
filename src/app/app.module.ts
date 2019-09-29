@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +12,7 @@ import { ContactListComponent } from './Contacts/contact-list/contact-list.compo
 import { ContactDetailsComponent } from './Contacts/contact-details/contact-details.component';
 import { AddContactComponent } from './Contacts/add-contact/add-contact.component';
 import { EditContactComponent } from './Contacts/edit-contact/edit-contact.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,12 +20,19 @@ import { EditContactComponent } from './Contacts/edit-contact/edit-contact.compo
     ContactListComponent,
     ContactDetailsComponent,
     AddContactComponent,
-    EditContactComponent
+    EditContactComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+})
   ],
   providers: [],
   bootstrap: [AppComponent]

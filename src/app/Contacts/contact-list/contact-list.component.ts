@@ -22,12 +22,12 @@ export class ContactListComponent implements OnInit {
   }
 
 
-  set listFilterBy(value : string) {
+  set listFilterBy(value: string) {
     this._listFilterBy = value;
     this.FilteredList = this._listFilterBy ? this.performFilter(this._listFilterBy) : this.allContacts;
   }
 
-  performFilter(filterBy: string) {
+  performFilter(filterBy: string): IContacts[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.allContacts.filter((contact: IContacts) => contact.Name.toLocaleLowerCase().indexOf(filterBy) !== -1 ||
     contact.Name.toLocaleLowerCase().indexOf(filterBy) !== -1);

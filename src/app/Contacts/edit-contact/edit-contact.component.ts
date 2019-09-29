@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IContacts } from 'src/app/shared/contact.model';
 import { ContactsService } from 'src/app/shared/contacts.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-contact',
@@ -11,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditContactComponent implements OnInit {
 
   contact: IContacts;
-  constructor(private contactService: ContactsService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private contactService: ContactsService, private router: Router, private route: ActivatedRoute, private toastr: ToastrService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.params['id'];
@@ -22,6 +23,8 @@ export class EditContactComponent implements OnInit {
   updateContact() {
     this.contactService.updateContact(this.contact);
     this.router.navigate(['Contacts']);
+    this.toastr.warning('Edited Successfully', 'Edit Contact');
+
   }
 
   cancelContact() {

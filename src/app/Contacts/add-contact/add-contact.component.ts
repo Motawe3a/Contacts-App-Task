@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactsService } from 'src/app/shared/contacts.service';
 import { Router } from '@angular/router';
 import { IContacts } from 'src/app/shared/contact.model';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-contact',
@@ -14,12 +15,13 @@ export class AddContactComponent {
   Phone: string;
   contact: IContacts;
 
-  constructor(private contactService: ContactsService, private router: Router) { }
+  constructor(private contactService: ContactsService, private router: Router, private toastr: ToastrService) { }
 
   saveContact() {
     this.contact = new IContacts(this.makeRandomId(), this.Name, this.Email, this.Phone);
     this.contactService.addContact(this.contact);
     this.router.navigate(['Contacts']);
+    this.toastr.success('Save Successfully', 'Add Contact');
 
   }
 
