@@ -10,3 +10,5 @@ a simple CRUD app where a user can :
     
     and toaster message to confirm the interact in case of success
     
+    ![](src/assets/Screenshot.jpg)
+    
