@@ -1,0 +1,17 @@
+<form>
+    <div class="form-group">
+      <label for="Name">Name</label>
+      <input type="text" name="Name" class="form-control" id="Name" [(ngModel)]="contact.Name" placeholder="Enter Name" size="30" required>
+    </div>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="Email" name="Email" class="form-control" id="Email" [(ngModel)]="contact.Email" placeholder="Name Email" required>
+    </div>
+    <div class="form-group">
+        <label for="Phone">Phone</label>
+        <input type="text" name="Phone" class="form-control" id="Phone" [(ngModel)]="contact.Phone" placeholder="Phone" required>
+      </div>
+
+    <button class="btn btn-primary" type="button" style="margin-right: .25em" (click)="updateContact()">Update</button>
+    <button class="btn btn-secondary" type="button" (click)="cancelContact()">Cancel</button>
+  </form>

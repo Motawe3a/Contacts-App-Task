@@ -12,6 +12,12 @@ export class ContactsService {
       Name: 'Ahmed Elsayed',
       Email: 'Motawe3a@yahoo.com',
       Phone: '01146296972'
+    },
+    {
+      id: '2',
+      Name: 'Asmaa Motawea',
+      Email: 'Asmaaa@yahoo.com',
+      Phone: '0112403707'
     }
   ];
 
@@ -20,6 +26,10 @@ export class ContactsService {
   }
 
   addContact(contact: IContacts) {
+    this.allContacts.push(contact);
+  }
+
+  updateContact(contact: IContacts) {
     const updateContact = this.allContacts.find(con => con.id = contact.id);
     updateContact.Name = contact.Name;
     updateContact.Email = contact.Email;
